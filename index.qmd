@@ -1,0 +1,7 @@
+# Preface {.unnumbered}
+
+This is a Quarto book. In this book you will learn about how to use Git, GitHub, and RStudio.
+
+This Quarto book is a guide on [Happy Git and GitHub for the useR](https://happygitwithr.com).
+
+![](https://happygitwithr.com/img/watch-me-diff-watch-me-rebase-smaller.png)

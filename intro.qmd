@@ -1,0 +1,5 @@
+# Introduction
+
+For times sake we will assume you know what Git, GitHub, R, and RStudio are and already have them installed.
+
+See [here](https://happygitwithr.com/install-intro) for more details on installation.

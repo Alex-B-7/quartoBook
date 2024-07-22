@@ -1,0 +1,21 @@
+---
+title: "Pull Requests"
+---
+
+## How to create a Pull Request on GitHub
+
+1.  Find the repository that you want to make changes to
+
+2.  Click the "Fork" button in the upper right
+
+3.  Give your new fork a repository name
+
+4.  Open a new project in RStudio
+
+5.  Click the git pane and then create a new branch
+
+6.  Make changes to the code, then make a commit and push it to github
+
+7.  On GitHub a yellow box will appear with a green box inside of it that says "Compare & pull request"
+
+8.  Then you will add a title and description for the pull request, then click "Create pull request"
