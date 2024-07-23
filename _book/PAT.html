@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>quartoBook - Learning Git - 3&nbsp; Personal access token for HTTPS</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Connect.html" rel="next">
+<link href="./summary.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./PAT.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Personal access token for HTTPS</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">quartoBook - Learning Git</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connect to GitHub</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PAT.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Personal access token for HTTPS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Connect RStudio to Git and GitHub</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Detect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Detect Git from RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newproj.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">New project, GitHub first</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Git commands</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pullrequests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pull Requests</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr"><span class="header-section-number">3.1</span> <strong>TL;DR</strong></a></li>
+  <li><a href="#https-versus-ssh" id="toc-https-versus-ssh" class="nav-link" data-scroll-target="#https-versus-ssh"><span class="header-section-number">3.2</span> <strong>HTTPS versus SSH</strong></a>
+  <ul class="collapse">
+  <li><a href="#url-determines-the-protocol" id="toc-url-determines-the-protocol" class="nav-link" data-scroll-target="#url-determines-the-protocol"><span class="header-section-number">3.2.1</span> <strong>URL determines the protocol</strong></a></li>
+  </ul></li>
+  <li><a href="#generate-a-personal-access-token-pat" id="toc-generate-a-personal-access-token-pat" class="nav-link" data-scroll-target="#generate-a-personal-access-token-pat"><span class="header-section-number">3.3</span> <strong>Generate a personal access token (PAT)</strong></a></li>
+  <li><a href="#store-your-pat" id="toc-store-your-pat" class="nav-link" data-scroll-target="#store-your-pat"><span class="header-section-number">3.4</span> <strong>Store your PAT</strong></a>
+  <ul class="collapse">
+  <li><a href="#call-an-r-function-to-store-your-credentials" id="toc-call-an-r-function-to-store-your-credentials" class="nav-link" data-scroll-target="#call-an-r-function-to-store-your-credentials"><span class="header-section-number">3.4.1</span> <strong>Call an R function to store your credentials</strong></a></li>
+  <li><a href="#store-credentials-through-organic-git-use" id="toc-store-credentials-through-organic-git-use" class="nav-link" data-scroll-target="#store-credentials-through-organic-git-use"><span class="header-section-number">3.4.2</span> <strong>Store credentials through organic Git use</strong></a></li>
+  </ul></li>
+  <li><a href="#https-pat-problems-and-solutions" id="toc-https-pat-problems-and-solutions" class="nav-link" data-scroll-target="#https-pat-problems-and-solutions"><span class="header-section-number">3.5</span> <strong>HTTPS PAT problems and solutions</strong></a>
+  <ul class="collapse">
+  <li><a href="#valid-pat-gets-stored-but-later-told-the-pat-is-invalid" id="toc-valid-pat-gets-stored-but-later-told-the-pat-is-invalid" class="nav-link" data-scroll-target="#valid-pat-gets-stored-but-later-told-the-pat-is-invalid"><span class="header-section-number">3.5.1</span> <strong>Valid PAT gets stored, but later told the PAT is invalid</strong></a></li>
+  <li><a href="#pat-doesnt-persist-on-macos-or-windows" id="toc-pat-doesnt-persist-on-macos-or-windows" class="nav-link" data-scroll-target="#pat-doesnt-persist-on-macos-or-windows"><span class="header-section-number">3.5.2</span> <strong>PAT doesn’t persist on macOS or Windows</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Personal access token for HTTPS</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>When we interact with a remote Git server, such as GitHub, we have to include credentials in the request. This proves we are a specific GitHub user, who’s allowed to do whatever we’re asking to do.</p>
+<p>Git can communicate with a remote server using one of two protocols, HTTPS or SSH, and the different protocols use different credentials.</p>
+<p>Here we describe the credential setup for the HTTPS protocol, which is what we recommend if you have no burning reason to pick SSH. With HTTPS, we will use a&nbsp;<strong>personal access token (PAT)</strong>.</p>
+<p>Let it be known that the password that you use to login to GitHub’s website is NOT an acceptable credential when talking to GitHub as a Git server. This was possible in the past (and may yet be true for other Git servers), but those days are over at GitHub.</p>
+<section id="tldr" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="tldr"><span class="header-section-number">3.1</span> <strong>TL;DR</strong></h2>
+<p>This is a very minimal account of getting and storing a PAT. This might be all you need when you’re first getting yourself set up. You can always come back later and read other parts of this chapter.</p>
+<p>Go to&nbsp;<a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a>&nbsp;and click “Generate token”.</p>
+<p>Or, from R, do:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::create_github_token()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Look over the scopes; I highly recommend selecting “repo”, “user”, and “workflow”. Recommended scopes will be pre-selected if you used&nbsp;<code>create_github_token()</code>.</p>
+<p>Click “Generate token”.</p>
+<p>Copy the generated PAT to your clipboard. Or leave that browser window open and available for a little while, so you can come back to copy the PAT.</p>
+<p>Provide this PAT next time a Git operation asks for your password<sup>2</sup>.</p>
+<p>You could even get out ahead of this and store the PAT explicitly right now. In R, call&nbsp;<code>gitcreds::gitcreds_set()</code>&nbsp;to get a prompt where you can paste your PAT:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> gitcreds::gitcreds_set<span class="kw">()</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">?</span> Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Adding new credentials...</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Removing credentials from cache...</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Done.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should be able to work with GitHub now, i.e.&nbsp;push and pull. If you’re still doing your initial setup, now is a great time to move on to&nbsp;<a href="https://happygitwithr.com/push-pull-github#push-pull-github">Connect to GitHub</a>.</p>
+<p>Read on to learn more about:</p>
+<ul>
+<li><p><a href="https://happygitwithr.com/https-pat#https-vs-ssh">How to decide between the HTTPS and SSH protocols</a></p></li>
+<li><p><a href="https://happygitwithr.com/https-pat#get-a-pat">PAT scopes, names, and expiration</a></p></li>
+<li><p><a href="https://happygitwithr.com/https-pat#store-pat">PAT storage</a></p></li>
+<li><p><a href="https://happygitwithr.com/https-pat#pat-troubleshooting">Troubleshooting</a></p></li>
+</ul>
+</section>
+<section id="https-versus-ssh" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="https-versus-ssh"><span class="header-section-number">3.2</span> <strong>HTTPS versus SSH</strong></h2>
+<p>I find HTTPS easier to get working quickly and&nbsp;<strong>strongly recommend</strong>&nbsp;it when you first start working with Git/GitHub. HTTPS is what GitHub recommends, presumably for exactly the same reasons. The “ease of use” argument in favor of HTTPS is especially true for Windows users. I started with HTTPS, preferred SSH for a while, and have returned to HTTPS. The main thing to know is that this is not an all-or-nothing decision and it’s a relatively easy decision to revisit later.</p>
+<p>Another advantage of HTTPS is that the PAT we’ll set up for that can also be used with GitHub’s REST API. That might not mean anything to you (yet), but there are many R packages that call GitHub’s API on your behalf (devtools+usethis, remotes, pak, gh, etc.). Configuring your PAT kills two birds with one stone: this single credential can be used to authenticate to GitHub as a regular Git server and for its REST API. If you authenticate via SSH for “regular” Git work, you will still have to set up a PAT for work that uses the REST API.</p>
+<p><img src="https://happygitwithr.com/img/pat-kills-both-birds.jpeg" class="img-fluid" width="1600"></p>
+<p>A properly configured PAT means all of this will “just work”:</p>
+<ul>
+<li><p>Remote HTTPS operations via command line Git and, therefore, via RStudio</p></li>
+<li><p>Remote HTTPS operations via the gert R package and, therefore, usethis</p></li>
+<li><p>GitHub API operations via the gh R package and, therefore, usethis</p></li>
+</ul>
+<section id="url-determines-the-protocol" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="url-determines-the-protocol"><span class="header-section-number">3.2.1</span> <strong>URL determines the protocol</strong></h3>
+<p>Even though I’m suggesting that you adopt HTTPS as a lifestyle, it’s good to know that you actually have very granular control over the protocol. It is determined by the URL used to access a remote repo. Feel free to skip this section if you are new to Git (we mention some concepts and commands that won’t make much sense ’til you’ve used Git a little).</p>
+<p>HTTPS remote URLs look like&nbsp;<code>https://github.com/&lt;OWNER&gt;/&lt;REPO&gt;.git</code>.<br>
+SSH remote URLs look like&nbsp;<code>git@github.com:&lt;OWNER&gt;/&lt;REPO&gt;.git</code>.</p>
+<p><img src="https://happygitwithr.com/img/github-ssh-url.png" class="img-fluid"></p>
+<p>When you execute a command such as&nbsp;<code>git push origin my-cool-feature-branch</code>, Git looks up the URL you’ve stored for the&nbsp;<code>origin</code>&nbsp;remote and uses the protocol implicit in the URL’s format. The protocol is a game time decision.</p>
+<p>This implies that:</p>
+<ul>
+<li><p>It’s fine to use HTTPS for one remote in a repo and SSH for another.</p></li>
+<li><p>It’s fine to use HTTPS in one repo and SSH in another.</p></li>
+<li><p>It’s fine to interact with a GitHub repo via HTTPS from one computer and via SSH from another.</p></li>
+<li><p>It’s fine to adopt HTTPS for new work, even if some of your pre-existing repos use SSH.</p></li>
+</ul>
+<p>You just have to be aware that mixed use of HTTPS and SSH means you’ll have to configure both sorts of credentials.</p>
+<p>Changing a specific remote from HTTPS to SSH (and back again) is a straightforward operation with&nbsp;<code>git remote set-url REMOTE_NAME DESIRED_URL</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~/rrr/happy-git-with-r</span> % git remote <span class="at">-v</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span>  https://github.com/jennybc/happy-git-with-r.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span>  https://github.com/jennybc/happy-git-with-r.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">~/rrr/happy-git-with-r</span> % git remote set-url origin git@github.com:jennybc/happy-git-with-r.git</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">~/rrr/happy-git-with-r</span> % git remote <span class="at">-v</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span>  git@github.com:jennybc/happy-git-with-r.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span>  git@github.com:jennybc/happy-git-with-r.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">~/rrr/happy-git-with-r</span> % git remote set-url origin https://github.com/jennybc/happy-git-with-r.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can do the same from R using functions in usethis:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::git_remotes()</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $origin</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "https://github.com/jennybc/happy-git-with-r.git"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">usethis::use_git_remote</span><span class="er">(</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"origin"</span><span class="ex">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"git@github.com:jennybc/happy-git-with-r.git"</span><span class="ex">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">overwrite</span> = TRUE</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">)</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::git_remotes()</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $origin</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "git@github.com:jennybc/happy-git-with-r.git"</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ex">usethis::use_git_remote</span><span class="er">(</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"origin"</span><span class="ex">,</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://github.com/jennybc/happy-git-with-r.git"</span><span class="ex">,</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="ex">overwrite</span> = TRUE</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="generate-a-personal-access-token-pat" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="generate-a-personal-access-token-pat"><span class="header-section-number">3.3</span> <strong>Generate a personal access token (PAT)</strong></h2>
+<p>On github.com, assuming you’re signed in, you can manage your personal access tokens from&nbsp;<a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a>, also reachable via&nbsp;<em>Settings &gt; Developer settings &gt; Personal access tokens</em>. You could click on “Generate new token” here or, perhaps even better, you could call&nbsp;<code>usethis::create_github_token()</code>&nbsp;from R:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::create_github_token()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The usethis approach takes you to a pre-filled form where we have pre-selected some recommended scopes, which you can look over and adjust before clicking “Generate token”. At the time of writing, the usethis-recommended scopes are “repo”, “user”, “gist”, and “workflow”.</p>
+<p><img src="https://happygitwithr.com/img/new-personal-access-token-screenshot.png" class="img-fluid"></p>
+<p>It is a very good idea to describe the token’s purpose in the&nbsp;<em>Note</em>&nbsp;field, because one day you might have multiple PATs. We recommend naming each token after its use case, such as the computer or project you are using it for, e.g.&nbsp;“personal-macbook-air” or “vm-for-project-xyz”. In the future, you will find yourself staring at this list of tokens, because inevitably you’ll need to re-generate or delete one of them. Make it easy to figure out which token you’ve come here to fiddle with.</p>
+<p>GitHub encourages the use of perishable tokens, with a default&nbsp;<em>Expiration</em>&nbsp;period of 30 days. Unless you have a specific reason to fight this, I recommend accepting this default. I assume that GitHub’s security folks have good reasons for their recommendation. But, of course, you can adjust the&nbsp;<em>Expiration</em>&nbsp;behaviour as you see fit, including “No expiration”.</p>
+<p>Once you’re happy with the token’s&nbsp;<em>Note</em>,&nbsp;<em>Expiration</em>, and&nbsp;<em>Scopes</em>, click “Generate token”.</p>
+<p>You won’t be able to see this token again, so don’t close or navigate away from this browser window until you store the PAT locally. Copy the PAT to the clipboard, anticipating what we’ll do next: trigger a prompt that lets us store the PAT in the Git credential store.</p>
+<p>Treat this PAT like a password! Do not ever hard-wire your PAT into your code! A PAT should always be retrieved implicitly, for example, from the Git credential store. We’re about to help you store the PAT in a safe place, where command line Git, RStudio, and R packages can discover it.</p>
+<p>If you use a password management app, such as 1Password or LastPass (highly recommended!), you might want to also add this PAT (and its&nbsp;<em>Note</em>) to the entry for GitHub, where you’re already storing your username and password. Storing your PAT in the Git credential store is a semi-persistent convenience, sort of like a browser cache or “remember me” on a website<sup>3</sup>&nbsp;and it’s conceivable you will need to re-enter your PAT in the future. You could decide to embrace the impermanence of your PAT and, if it somehow goes missing, you’ll just&nbsp;<a href="https://happygitwithr.com/https-pat#regenerate-pat">re-generate the PAT and re-store it</a>. If you accept the default 30-day expiration period, this is a workflow you’ll be using often anyway. But if you create long-lasting tokens or want to feel free to play around with the functions for setting or clearing your Git credentials, it can be handy to have your own record of your PAT in a secure place, like 1Password or LastPass.</p>
+</section>
+<section id="store-your-pat" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="store-your-pat"><span class="header-section-number">3.4</span> <strong>Store your PAT</strong></h2>
+<p>At this point, I assume you’ve generated a PAT and have it available, in one or both of these ways:</p>
+<ul>
+<li><p>In a secure, long-term system for storing secrets, like 1Password or LastPass</p></li>
+<li><p>For the next few minutes, in a browser window or on the clipboard</p></li>
+</ul>
+<p>There are a couple ways to get your PAT into the Git credential store:</p>
+<ul>
+<li><p>Call an R function to explicitly store (or update) your credentials.</p></li>
+<li><p>Do something in command line Git or RStudio that triggers a credential challenge.</p></li>
+</ul>
+<section id="call-an-r-function-to-store-your-credentials" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="call-an-r-function-to-store-your-credentials"><span class="header-section-number">3.4.1</span> <strong>Call an R function to store your credentials</strong></h3>
+<p>There are two R packages for accessing the Git credential store:</p>
+<ul>
+<li><p><a href="https://r-lib.github.io/gitcreds/">gitcreds</a></p></li>
+<li><p><a href="https://docs.ropensci.org/credentials/">credentials</a></p></li>
+</ul>
+<p>It is likely that these packages will eventually combine into one and, even now, they are largely interoperable. You don’t need to follow the instructions for both packages – pick one!</p>
+<section id="gitcreds-package" class="level4" data-number="3.4.1.1">
+<h4 data-number="3.4.1.1" class="anchored" data-anchor-id="gitcreds-package"><span class="header-section-number">3.4.1.1</span> <strong>gitcreds package</strong></h4>
+<p>If you don’t have gitcreds installed, install via&nbsp;<code>install.packages("gitcreds")</code>. If you’ve installed usethis, you will already have gitcreds, because usethis uses gh and gh uses gitcreds.</p>
+<p>Call&nbsp;<code>gitcreds::gitcreds_set()</code>. If you don’t have a PAT stored already, it will prompt you to enter your PAT. Paste!</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> gitcreds::gitcreds_set<span class="kw">()</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">?</span> Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Adding new credentials...</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Removing credentials from cache...</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Done.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you already have a stored credential,&nbsp;<code>gitcreds::gitcreds_set()</code>&nbsp;reveals this and will even let you inspect it. This helps you decide whether to keep the existing credential or replace it. When in doubt, embrace a new, known-to-be-good credential over an old one, of dubious origins.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> gitcreds::gitcreds_set<span class="kw">()</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Your current credentials for <span class="st">'https://github.com'</span>:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">protocol:</span> https</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">host</span>    : github.com</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">username:</span> PersonalAccessToken</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">password:</span> <span class="op">&lt;</span>-- hidden <span class="at">--</span><span class="op">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> What would you like to do<span class="pp">?</span> </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ex">1:</span> Keep these credentials</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="ex">2:</span> Replace these credentials</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="ex">3:</span> See the password / token</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="ex">Selection:</span> 2</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Removing current credentials...</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="ex">?</span> Enter new password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Adding new credentials...</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Removing credentials from cache...</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span><span class="op">&gt;</span> Done.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can check that you’ve stored a credential with&nbsp;<code>gitcreds_get()</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gitcreds_get()</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &lt;gitcreds&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   protocol: https</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   host    : github.com</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   username: PersonalAccessToken</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   password: &lt;-- hidden --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Other functions that can help you feel confident about your PAT setup include:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::gh_token_help()</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::git_sitrep()</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gh::gh_whoami()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="credentials-package" class="level4" data-number="3.4.1.2">
+<h4 data-number="3.4.1.2" class="anchored" data-anchor-id="credentials-package"><span class="header-section-number">3.4.1.2</span> <strong>9.4.1.2&nbsp;credentials package</strong></h4>
+<p>If you don’t have credentials installed, install via&nbsp;<code>install.packages("credentials")</code>. If you’ve installed usethis, you will already have credentials, because usethis uses gert and gert uses credentials.</p>
+<p>Call&nbsp;<code>set_github_pat()</code>. If you don’t have a PAT stored already, it will prompt you to enter your PAT. Paste!</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">credentials::set_github_pat()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If successful, your initial (and subsequent) calls will look like this:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">credentials::set_github_pat()</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; If prompted for GitHub credentials, enter your PAT in the password field</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Using GITHUB_PAT from Jennifer (Jenny) Bryan (credential helper: osxkeychain)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Other functions that can help you feel confident about your PAT setup include:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::gh_token_help()</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::git_sitrep()</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gh::gh_whoami()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="store-credentials-through-organic-git-use" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="store-credentials-through-organic-git-use"><span class="header-section-number">3.4.2</span> <strong>Store credentials through organic Git use</strong></h3>
+<p><em>Before gitcreds and credentials existed (see above), we had to orchestrate a credential challenge by setting up (and then tearing down) a toy repo. That still occurs naturally in the guided exercise in&nbsp;<a href="https://happygitwithr.com/push-pull-github#push-pull-github">Connect to GitHub</a>. But I strongly recommend managing your PAT more directly and explicitly with&nbsp;<code>gitcreds::gitcreds_set()</code>&nbsp;and related functions in gitcreds.</em></p>
+</section>
+</section>
+<section id="https-pat-problems-and-solutions" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="https-pat-problems-and-solutions"><span class="header-section-number">3.5</span> <strong>HTTPS PAT problems and solutions</strong></h2>
+<p>This section is for people who need to know even more about PAT management, because they’re in a nonstandard situation or troubleshooting.</p>
+<section id="valid-pat-gets-stored-but-later-told-the-pat-is-invalid" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="valid-pat-gets-stored-but-later-told-the-pat-is-invalid"><span class="header-section-number">3.5.1</span> <strong>Valid PAT gets stored, but later told the PAT is invalid</strong></h3>
+<p>Let’s say you generate a fresh PAT and successfully store it as described above. Maybe you even use it successfully. But later, you’re told your PAT is invalid! How can this be?</p>
+<p>Here are some likely explanations:</p>
+<ol type="1">
+<li><p>Your PAT truly is invalid. By default, PATs have an expiration date now. One day you really will wake up and find the PAT has gone bad overnight and you need to re-generate and re-store it.</p></li>
+<li><p>You have an invalid PAT stored&nbsp;<em>somewhere else</em>, that you’ve forgotten about, probably in&nbsp;<code>.Renviron</code>. This old, invalid PAT is preventing R packages from even discovering your new, valid PAT.</p></li>
+</ol>
+<section id="pat-has-expired" class="level4" data-number="3.5.1.1">
+<h4 data-number="3.5.1.1" class="anchored" data-anchor-id="pat-has-expired"><span class="header-section-number">3.5.1.1</span> <strong>PAT has expired</strong></h4>
+<p>You are going to be re-generating and re-storing your PAT on a schedule dictated by its expiration period. By default, once per month.</p>
+<p>When the PAT expires, return to&nbsp;<a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a>&nbsp;and click on its&nbsp;<em>Note</em>. (You do label your tokens nicely by use case, right? Right?) At this point, you can optionally adjust scopes and then click “Regenerate token”. You can optionally modify its&nbsp;<em>Expiration</em>&nbsp;and then click “Regenerate token” (again). As before, copy the PAT to the clipboard, call&nbsp;<code>gitcreds::gitcreds_set()</code>, and paste!</p>
+<p>Hopefully it’s becoming clear why each token’s&nbsp;<em>Note</em>&nbsp;is so important. The actual token may be changing, e.g., once a month, but its use case (and scopes) are much more persistent and stable.</p>
+</section>
+<section id="old-github_pat-in-.renviron" class="level4" data-number="3.5.1.2">
+<h4 data-number="3.5.1.2" class="anchored" data-anchor-id="old-github_pat-in-.renviron"><span class="header-section-number">3.5.1.2</span> <strong>Old&nbsp;<code>GITHUB_PAT</code>&nbsp;in&nbsp;<code>.Renviron</code></strong></h4>
+<p>These usethis functions will diagnose this problem:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::gh_token_help()</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">usethis::git_sitrep()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the past, it was common to store a PAT as the&nbsp;<code>GITHUB_PAT</code>&nbsp;environment variable in&nbsp;<code>.Renviron</code>. But now, thanks to gitcreds and credentials, we can store and retrieve a PAT, from R, the same way as command line Git does.</p>
+<p>If you have any doubt about your previous practices, open&nbsp;<code>.Renviron</code>, look for a line setting the&nbsp;<code>GITHUB_PAT</code>&nbsp;environment variable, and delete it.&nbsp;<code>usethis::edit_r_environ()</code>&nbsp;can be helpful for getting&nbsp;<code>.Renviron</code>&nbsp;open for editing. Don’t forget to restart R for this change to take effect.</p>
+</section>
+</section>
+<section id="pat-doesnt-persist-on-macos-or-windows" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="pat-doesnt-persist-on-macos-or-windows"><span class="header-section-number">3.5.2</span> <strong>PAT doesn’t persist on macOS or Windows</strong></h3>
+<p>The credential helpers used by Git take advantage of official OS-provided credential stores, where possible, such as macOS Keychain and Windows Credential Manager.</p>
+<p>If you’re trying to follow the advice here and your PAT never persists, consider that you may need to update Git to get its more modern credential helpers. This is absolutely an area of Git that has improved rapidly in recent years and the gitcreds and credentials package work best with recent versions of Git. I have not needed to explicitly activate a credential helper on macOS or Windows with any recent version of Git.</p>
+<p>Here’s a command to reveal the current credential helper and what I see these days.</p>
+<p>macOS</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--show-origin</span> <span class="at">--get</span> credential.helper</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">file:/Users/jenny/.gitconfig</span>    osxkeychain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Windows</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--show-origin</span> <span class="at">--get</span> credential.helper</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">file:C:/Program</span> Files/Git/mingw64/etc/gitconfig manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you want to know how more about how gitcreds and credentials are managing your PAT, learn about&nbsp;<a href="https://git-scm.com/docs/git-credential"><code>git credential &lt;fill|approve|reject&gt;</code></a>. For keeners, that documentation gives you the gory details on how credentials are stored and retrieved:</p>
+<blockquote class="blockquote">
+<p>Git has an internal interface for storing and retrieving credentials from system-specific helpers, as well as prompting the user for usernames and passwords. The&nbsp;<code>git-credential</code>&nbsp;command exposes this interface to scripts which may want to retrieve, store, or prompt for credentials in the same manner as Git.</p>
+</blockquote>
+<p>On Windows, your Git credentials are probably being stored via Credential Manager.</p>
+<p>On macOS, your Git credentials are probably being stored in the Keychain.</p>
+<p>If you really want to poke around directly to explore or clean out your GitHub credentials, launch Credential Manager (Windows) or Keychain Access (macOS) and search for “github.com”.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./summary.html" class="pagination-link" aria-label="Connect to GitHub">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connect to GitHub</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Connect.html" class="pagination-link" aria-label="Connect RStudio to Git and GitHub">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Connect RStudio to Git and GitHub</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
